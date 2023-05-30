@@ -1,1 +1,13 @@
 docker-compose-yaml: docker-compose.yml
+
+environments:
+  wildalternates:
+    routes:
+      - nginx:
+          - wildcardtesting.test6.amazee.io:
+              tls-acme: false
+              wildcard: true
+          - alternatetesting.test6.amazee.io:
+              alternativenames:
+                - alt1.alternatetesting.test6.amazee.io
+                - alt2.alternatetesting.test6.amazee.io
