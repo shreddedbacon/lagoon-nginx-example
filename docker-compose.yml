@@ -5,7 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     labels:
-      lagoon.type: nginx
+      lagoon.type: basic-persistent
+      lagoon.service.port: 8080
+      lagoon.persistent: /app/storage
     volumes:
       - ./app:/app:delegated
     ports:
