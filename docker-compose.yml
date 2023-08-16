@@ -10,3 +10,7 @@ services:
       - ./app:/app:delegated
     ports:
       - "8080:8080"
+  database:
+    image: uselagoon/mariadb-10.6-drupal:latest
+    labels:
+      lagoon.type: mariadb
