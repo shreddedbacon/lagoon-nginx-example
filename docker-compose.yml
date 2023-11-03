@@ -1,16 +1,14 @@
 version: '2'
-x-site-branch:
-  &site-branch: $LAGOON_GIT_BRANCH
 services:
   nginx:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        LAGOON_GIT_BRANCH: *site-branch
     labels:
       lagoon.type: nginx
     volumes:
       - ./app:/app:delegated
     ports:
       - "8080:8080"
+    env_file:
+      - .env.local
