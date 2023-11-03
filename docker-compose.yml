@@ -1,9 +1,13 @@
 version: '2'
+x-site-branch:
+  &site-branch: $LAGOON_GIT_BRANCH
 services:
   nginx:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        LAGOON_GIT_BRANCH: *site-branch
     labels:
       lagoon.type: nginx
     volumes:
