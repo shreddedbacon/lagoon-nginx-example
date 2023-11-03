@@ -1,4 +1,14 @@
 version: '2'
+
+x-volumes:
+  &default-volumes
+  volumes:
+
+    - .:/app:${VOLUME_FLAGS:-delegated} ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
+x-user:
+  &default-user
+  user: '1000'
+
 services:
   nginx:
     build:
@@ -6,9 +16,9 @@ services:
       dockerfile: Dockerfile
     labels:
       lagoon.type: nginx
-    volumes:
-      - ./app:/app:delegated
     ports:
       - "8080:8080"
+    <<: *default-volumes
+    <<: *default-user
     env_file:
       - .env.local
