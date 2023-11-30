@@ -1,1 +1,10 @@
 docker-compose-yaml: docker-compose.yml
+
+environments:
+  route-cleanup:
+    routes:
+      - nginx:
+          - routecleanup.test6.amazee.io:
+              tls-acme: false
+          - routetoleave.test6.amazee.io:
+              tls-acme: false
