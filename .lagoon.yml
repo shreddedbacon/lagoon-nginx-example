@@ -4,7 +4,7 @@ environments:
   route-cleanup:
     routes:
       - nginx:
-          # - routecleanup.test6.amazee.io:
-          #     tls-acme: false
+          - routecleanup.test6.amazee.io:
+              tls-acme: false
           - routetoleave.test6.amazee.io:
               tls-acme: false
