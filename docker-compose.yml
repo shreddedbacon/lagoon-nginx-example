@@ -11,8 +11,6 @@ services:
     ports:
       - "8080:8080"
   redis:
-    build:
-      context: .
-      dockerfile: Dockerfile.redis
+    image: uselagoon/redis-6-persistent:latest
     labels:
       lagoon.type: redis-persistent
