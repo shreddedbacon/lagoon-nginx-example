@@ -1,7 +1,7 @@
 docker-compose-yaml: docker-compose.yml
 
 tasks:
-  post_rollout:
+  post-rollout:
     - run: 
         name: specialchars
         command: echo "Hello, 世界"
