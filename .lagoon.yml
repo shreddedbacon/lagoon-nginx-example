@@ -1,1 +1,9 @@
 docker-compose-yaml: docker-compose.yml
+
+tasks:
+  post_rollout:
+    - name: specialchars
+      command: echo "Hello, 世界"
+      service: nginx
+      shell: bash
+  
