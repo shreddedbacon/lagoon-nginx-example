@@ -6,5 +6,4 @@ tasks:
         name: specialchars
         command: echo "Hello, 世界"
         service: nginx
-        shell: bash
   
