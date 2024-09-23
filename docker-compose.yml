@@ -5,8 +5,29 @@ services:
       context: .
       dockerfile: Dockerfile
     labels:
-      lagoon.type: nginx
+      lagoon.type: basic
+      lagoon.service.port: 8080
+      lagoon.volumes.extravol.path: /extra
     volumes:
       - ./app:/app:delegated
     ports:
       - "8080:8080"
+  nginx2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      lagoon.type: basic
+      lagoon.service.port: 8080
+      lagoon.volumes.extravol.path: /extra
+    volumes:
+      - ./app:/app:delegated
+    ports:
+      - "8081:8080"
+
+
+volumes:
+  extravol:
+    labels:
+      lagoon.type: persistent
+      lagoon.backup: false
