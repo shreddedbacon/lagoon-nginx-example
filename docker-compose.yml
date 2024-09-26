@@ -13,29 +13,29 @@ services:
     ports:
       - "8080:8080"
 
-  # nginx3:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   labels:
-  #     lagoon.type: nginx-php-persistent
-  #     lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
-  #     lagoon.name: nginx-php
-  # php:
-  #   image: uselagoon/php-8.3-fpm:latest
-  #   labels:
-  #     lagoon.type: nginx-php-persistent
-  #     lagoon.name: nginx-php
-  #     lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
+  nginx3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      lagoon.type: nginx-php-persistent
+      lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
+      lagoon.name: nginx-php
+  php:
+    image: uselagoon/php-8.3-fpm:latest
+    labels:
+      lagoon.type: nginx-php-persistent
+      lagoon.name: nginx-php
+      lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
       
-  # mariadb:
-  #   image: uselagoon/mariadb-10.11-drupal:latest
-  #   labels:
-  #     lagoon.type: mariadb
-  #   ports:
-  #     - "3306"
-  #   volumes:
-  #     - db:/var/lib/mysql
+  mariadb:
+    image: uselagoon/mariadb-10.11-drupal:latest
+    labels:
+      lagoon.type: mariadb
+    ports:
+      - "3306"
+    volumes:
+      - db:/var/lib/mysql
 
 volumes:
   db:
