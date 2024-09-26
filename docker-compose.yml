@@ -37,14 +37,14 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  mariadb2:
-    image: uselagoon/mariadb-10.11-drupal:latest
-    labels:
-      lagoon.type: mariadb
-    ports:
-      - "3306"
-    volumes:
-      - db:/var/lib/mysql
+  # mariadb2:
+  #   image: uselagoon/mariadb-10.11-drupal:latest
+  #   labels:
+  #     lagoon.type: mariadb-single
+  #   ports:
+  #     - "3306"
+  #   volumes:
+  #     - db:/var/lib/mysql
 
   mariadb3:
     image: uselagoon/mariadb-10.11-drupal:latest
