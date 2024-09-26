@@ -24,9 +24,17 @@ services:
       - ./app:/app:delegated
     ports:
       - "8081:8080"
-
+  mariadb:
+    image: uselagoon/mariadb-10.11-drupal:latest
+    labels:
+      lagoon.type: mariadb
+    ports:
+      - "3306"
+    volumes:
+      - db:/var/lib/mysql
 
 volumes:
+  db:
   extravol:
     labels:
       lagoon.type: persistent
