@@ -27,11 +27,20 @@ services:
       lagoon.type: nginx-php-persistent
       lagoon.name: nginx-php
       lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
-      
+
   mariadb:
     image: uselagoon/mariadb-10.11-drupal:latest
     labels:
       lagoon.type: mariadb
+    ports:
+      - "3306"
+    volumes:
+      - db:/var/lib/mysql
+
+  mariadb2:
+    image: uselagoon/mariadb-10.11-drupal:latest
+    labels:
+      lagoon.type: mariadb-single
     ports:
       - "3306"
     volumes:
