@@ -12,18 +12,22 @@ services:
       - ./app:/app:delegated
     ports:
       - "8080:8080"
-  nginx2:
+
+  nginx3:
     build:
       context: .
       dockerfile: Dockerfile
     labels:
-      lagoon.type: basic
-      lagoon.service.port: 8080
-      lagoon.volumes.extravol.path: /extra
-    volumes:
-      - ./app:/app:delegated
-    ports:
-      - "8081:8080"
+      lagoon.type: nginx-php-persistent
+      lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
+      lagoon.name: nginx-php
+  php:
+    image: uselagoon/php-8.3-fpm:latest
+    labels:
+      lagoon.type: nginx-php-persistent
+      lagoon.name: nginx-php
+      lagoon.persistent: /app/web/sites/default/files/ # define where the persistent storage should be mounted too
+      
   # mariadb:
   #   image: uselagoon/mariadb-10.11-drupal:latest
   #   labels:
