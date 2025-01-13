@@ -6,4 +6,3 @@ tasks:
         name: sleep
         command: sleep 30
         service: nginx
-        shell: bash
