@@ -3,4 +3,4 @@ FROM uselagoon/nginx:latest
 COPY index.html /app/.
 COPY .lagoon.yml /app/.
 
-RUN this should fail
+RUN echo "ERROR: failed to solve: layer does not exist"
