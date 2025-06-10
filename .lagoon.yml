@@ -7,3 +7,6 @@ network-policies:
     # this allows anything in this organization
     - name: lagoon-demo-organization
       environment-type: production
+    projects: 
+    # this allows any environment from example-project1 to access myservice
+    - name: test-project2
