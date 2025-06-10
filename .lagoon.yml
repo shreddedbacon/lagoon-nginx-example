@@ -5,4 +5,4 @@ network-policies:
   - service: nginx
     organizations: 
     # this allows anything in this organization
-    - name: lagoon-demo-organzation
+    - name: lagoon-demo-organization
