@@ -1,1 +1,8 @@
 docker-compose-yaml: docker-compose.yml
+
+network-policies:
+  # the name of the service you want to allow connections to
+  - service: nginx
+    organizations: 
+    # this allows anything in this organization
+    - name: lagoon-demo-organzation
