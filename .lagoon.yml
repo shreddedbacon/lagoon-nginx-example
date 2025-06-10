@@ -6,3 +6,4 @@ network-policies:
     organizations: 
     # this allows anything in this organization
     - name: lagoon-demo-organization
+      environment-type: production
