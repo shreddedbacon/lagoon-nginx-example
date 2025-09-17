@@ -3,7 +3,7 @@ routes:
   autogenerate:
     oauthProtected: true
 
-environment:
+environments:
   o2p:
     routes:
       - nginx:
