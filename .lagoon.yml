@@ -1,7 +1,7 @@
 docker-compose-yaml: docker-compose.yml
 
-environments:
-  cleanup:
-    routes:
-      - nginx:
-          - custom-route.example.com
+# environments:
+#   cleanup:
+#     routes:
+#       - nginx:
+#           - custom-route.example.com
