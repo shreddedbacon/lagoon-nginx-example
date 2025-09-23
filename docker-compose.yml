@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     labels:
       lagoon.type: nginx
+      lagoon.service.loadbalancer: true
     volumes:
       - ./app:/app:delegated
     ports:
