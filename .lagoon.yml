@@ -8,4 +8,4 @@ environments:
       - nginx:
         - developmentsite.172.18.0.240.nip.io:
             annotations:
-              nginx.ingress.kubernetes.io/permanent-redirect: https://example.com/${1}
+              nginx.ingress.kubernetes.io/permanent-redirect: https://example.com$request_uri
