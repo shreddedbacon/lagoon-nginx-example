@@ -14,3 +14,11 @@ services:
     image: uselagoon/mariadb-10.6-drupal:latest
     labels:
       lagoon.type: mariadb
+  database2:
+    image: uselagoon/mariadb-10.6-drupal:latest
+    labels:
+      lagoon.type: mariadb
+  database3:
+    image: uselagoon/mariadb-10.6-drupal:latest
+    labels:
+      lagoon.type: mariadb
