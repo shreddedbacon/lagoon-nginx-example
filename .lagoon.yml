@@ -1,1 +1,19 @@
 docker-compose-yaml: docker-compose.yml
+x-trusted-ips: &trusted-ips |
+  set_real_ip_from 123.123.123.123/24;
+  set_real_ip_from 2002::1234:abcd:ffff:c0a8:101/64;
+
+environments:
+  traefik-ingress:
+    autogenerateRoutes: false
+    routes:
+      - nginx:
+        - "www.example.com":
+            annotations:
+              nginx.ingress.kubernetes.io/server-snippet: *trusted-ips
+              nginx.ingress.kubernetes.io/enable-cors: 'true'
+              nginx.ingress.kubernetes.io/cors-allow-origin: "https://testing.example.com"
+              nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST"
+              nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, Authorization, X-Requested-With, Accept"
+              nginx.ingress.kubernetes.io/cors-expose-headers: "X-Custom-Header"
+              nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
