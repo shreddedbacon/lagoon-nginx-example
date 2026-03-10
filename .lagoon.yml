@@ -5,14 +5,13 @@ x-trusted-ips: &trusted-ips |
 
 environments:
   traefik-ingress:
-    autogenerateRoutes: false
     routes:
       - nginx:
-        - "www.example.com":
+        - "example.172.18.0.240.nip.io":
             annotations:
               nginx.ingress.kubernetes.io/server-snippet: *trusted-ips
               nginx.ingress.kubernetes.io/enable-cors: 'true'
-              nginx.ingress.kubernetes.io/cors-allow-origin: "https://testing.example.com"
+              nginx.ingress.kubernetes.io/cors-allow-origin: "https://testing-example.172.18.0.240.nip.io"
               nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST"
               nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, Authorization, X-Requested-With, Accept"
               nginx.ingress.kubernetes.io/cors-expose-headers: "X-Custom-Header"
