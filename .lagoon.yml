@@ -9,6 +9,7 @@ environments:
       - nginx:
         - "example.172.18.0.240.nip.io":
             annotations:
+              nginx.ingress.kubernetes.io/whitelist-source-range: 10.0.0.0/8,172.16.0.0/12
               nginx.ingress.kubernetes.io/server-snippet: *trusted-ips
               nginx.ingress.kubernetes.io/enable-cors: 'true'
               nginx.ingress.kubernetes.io/cors-allow-origin: "https://testing-example.172.18.0.240.nip.io"
