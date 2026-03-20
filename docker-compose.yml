@@ -11,17 +11,17 @@ services:
       - ./app:/app:delegated
     ports:
       - "8080:8080"
-  nginx2:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    labels:
-      lagoon.type: nginx
-      lagoon.volumes.extravol2.path: /extra
-    volumes:
-      - ./app:/app:delegated
-    ports:
-      - "8081:8080"
+  # nginx2:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   labels:
+  #     lagoon.type: nginx
+  #     lagoon.volumes.extravol2.path: /extra
+  #   volumes:
+  #     - ./app:/app:delegated
+  #   ports:
+  #     - "8081:8080"
 
 volumes:
   extravol:
