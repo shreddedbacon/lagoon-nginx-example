@@ -8,5 +8,7 @@ services:
       lagoon.type: nginx
     # volumes:
     #   - ./app:/app:delegated
+    environment:
+      NGINX_ALLOWED_IP: 10.0.0.0/8
     ports:
       - "8080:8080"
