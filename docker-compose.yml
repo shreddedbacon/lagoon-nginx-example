@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     labels:
       lagoon.type: nginx
-    volumes:
-      - ./app:/app:delegated
+    # volumes:
+    #   - ./app:/app:delegated
     ports:
       - "8080:8080"
