@@ -1,1 +1,7 @@
 docker-compose-yaml: docker-compose.yml
+environments:
+  cluster-issuer:
+    routes:
+      - nginx:
+        - "testing-cluster-issuer.test6.shreddedbacon.com"
+            certIssuer: "example-issuer"
