@@ -3,5 +3,5 @@ environments:
   cluster-issuer:
     routes:
       - nginx:
-        - "testing-cluster-issuer.test6.shreddedbacon.com"
+        - "testing-cluster-issuer.test6.shreddedbacon.com":
             certIssuer: "example-issuer"
